@@ -13,6 +13,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import java.util.Date;
 import java.util.List;
 
 import io.realm.Realm;
@@ -87,7 +88,15 @@ public class MainActivity extends AppCompatActivity {
         listItem.setHigh(data.getIntExtra("High", -1));
         listItem.setLower(data.getIntExtra("Low", -1));
         listItem.setPulse(data.getIntExtra("Pulse", -1));
-        
+        listItem.setComment(data.getStringExtra("comment"));
+        Date date = new Date(0);
+        int[] Date = data.getIntArrayExtra("date");
+        date.setYear(Date[0]);
+        date.setMonth(Date[1]);
+        date.setDate(Date[2]);
+        date.setHours(Date[3]);
+        date.setMinutes(Date[4]);
+        listItem.setDate(date);
         DBrealm.copyToRealmOrUpdate(listItem);
 
 
