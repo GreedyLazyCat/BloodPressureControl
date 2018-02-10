@@ -66,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
         startActivityForResult(intent, 1);
     }
 
+    
     public void updateUI(Realm db){
         //обновлять список и принимает базуданных реалм, которую надо передать, чтобы адаптер работал с ней
         itemAdapter = new ItemAdapter(this, DBrealm.where(ListItem.class).findAllAsync(), db);

@@ -99,6 +99,7 @@ public class DialogActivity extends AppCompatActivity implements View.OnClickLis
             time[3] = date.getHours();
             time[4] = date.getMinutes();
 
+
             SimpleDateFormat sdfDate = new SimpleDateFormat("dd.MM.yyyy");
             SimpleDateFormat sdfTime = new SimpleDateFormat("HH:mm");
 
