@@ -90,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
         
         DBrealm.copyToRealmOrUpdate(listItem);
 
+
         DBrealm.commitTransaction();
 
 

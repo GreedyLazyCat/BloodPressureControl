@@ -128,7 +128,6 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemHolder> im
                     Intent intent = new Intent(context, DialogActivity.class);
                     intent.putExtra("id", mListItem.getId());
                     ((Activity)context).startActivityForResult(intent,1);
-
                     break;
             }
         }

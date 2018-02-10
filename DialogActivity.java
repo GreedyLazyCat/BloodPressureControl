@@ -169,7 +169,6 @@ public class DialogActivity extends AppCompatActivity implements View.OnClickLis
                         time[2] = datePicker.getDayOfMonth();
                         SimpleDateFormat sdfDate = new SimpleDateFormat("dd.MM.yyyy");
 
-
                         txtDialogDate.setText(sdfDate.format(date));
 
                     }
