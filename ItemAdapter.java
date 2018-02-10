@@ -82,7 +82,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemHolder> im
         TextView txtHigh, txtLow, txtPulse, txtDate,txtTime, txtComment;
         ImageButton btnDelete, btnEdit;
         ListItem mListItem;
-        int pos;
+        int pos, id;
 
 
         public ItemHolder(View itemView) {
@@ -99,7 +99,9 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemHolder> im
             txtTime = (TextView) itemView.findViewById(R.id.txtTime);
             btnDelete = (ImageButton) itemView.findViewById(R.id.btnDelete);
             btnEdit = (ImageButton) itemView.findViewById(R.id.btnEdit);
+
             mListItem = results.get(position);
+            itemView.setTag(mListItem.getId());
 
             btnDelete.setOnClickListener(this);
             btnEdit.setOnClickListener(this);
@@ -131,7 +133,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemHolder> im
                     break;
             }
         }
-
+        //описал его работу в MainActivity
         public void showDialog(Context context){
 
             new AlertDialog.Builder(context)

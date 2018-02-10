@@ -92,6 +92,20 @@ public class DialogActivity extends AppCompatActivity implements View.OnClickLis
 
         }else {//если равно -1, то мы добавляем
             SetNumberPickerDefaults();
+            Date date = new Date();
+            time[0] = date.getYear();
+            time[1] = date.getMonth();
+            time[2] = date.getDate();
+            time[3] = date.getHours();
+            time[4] = date.getMinutes();
+
+            SimpleDateFormat sdfDate = new SimpleDateFormat("dd.MM.yyyy");
+            SimpleDateFormat sdfTime = new SimpleDateFormat("HH:mm");
+
+
+            txtDialogTime.setText(sdfTime.format(date));
+            txtDialogDate.setText(sdfDate.format(date));
+
             DBrealm.beginTransaction();
 
             Number results = DBrealm.where(ListItem.class).max("id");//получаем максимальное значение id
